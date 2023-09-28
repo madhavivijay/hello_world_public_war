@@ -1,7 +1,7 @@
 ---
 - hosts: websever
   become: yes
-  // become_user: tomcat
+  #become_user: tomcat
   tasks:
 
   - name: create directory 

@@ -1,6 +1,8 @@
 ---
 - hosts: websever
   become: yes
+  vars:
+    build_number: '{{ BUILD_NUMBER }}'
   #become_user: tomcat
   tasks:
 
@@ -12,7 +14,7 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://madhavig.jfrog.io/artifactory/test/webapp-18.war
+      url: https://madhavig.jfrog.io/artifactory/test/webapp-{{ build_number }}.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: gmadhavivijaytn@gmail.com
       password: Password@1

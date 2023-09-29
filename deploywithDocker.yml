@@ -8,7 +8,7 @@
       shell: docker login -u gmadhavivijaytn@gmail.com -p Password@1 madhavig.jfrog.io    
     
     - name: pull an image
-      shell: docker pull madhavig.jfrog.io/docker-test/devops_practice:${{ BUILD_NUMBER }}
+      shell: docker pull madhavig.jfrog.io/docker-test/devops_practice:{{ BUILD_NUMBER }}
 
     # - name: remove container
     #   shell: docker rm -f devopsAppDeploy

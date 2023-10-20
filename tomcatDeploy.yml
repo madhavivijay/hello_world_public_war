@@ -1,8 +1,8 @@
 ---
 - hosts: websever
   become: yes
-  # vars:
-  #   build_number: '{{ BUILD_NUMBER }}'
+  vars:
+    build_number: '{{ BUILD_NUMBER }}'
   #become_user: tomcat
   tasks:
 
@@ -14,8 +14,8 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://madhavi2023.jfrog.io/artifactory/test-generic-local/webapp-12.war
-      # url: https://madhavi2023.jfrog.io/artifactory/test-generic-local/webapp-{{ build_number }}.war
+      # url: https://madhavi2023.jfrog.io/artifactory/test-generic-local/webapp-12.war
+      url: https://madhavi2023.jfrog.io/artifactory/test-generic-local/webapp-{{ build_number }}.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: gmadhavivijaytn@gmail.com
       password: Password@1
@@ -26,11 +26,11 @@
       state: directory
       mode: 0777
 
-  # - name: backup file with owner and permissions
-  #   copy:
-  #     src: /opt/tomcat/webapps/webapp.war
-  #     dest: /home/tomcat/backup/webapp.war
-  #     remote_src: yes
+  - name: backup file with owner and permissions
+    copy:
+      src: /opt/tomcat/webapps/webapp.war
+      dest: /home/tomcat/backup/webapp.war
+      remote_src: yes
 
   - name: Delete remote war file
     file:

@@ -14,7 +14,7 @@
 
   - name: download war file
     ansible.builtin.get_url:
-      url: https://madhavig.jfrog.io/artifactory/test/webapp-{{ build_number }}.war
+      url: https://madhavi2023.jfrog.io/artifactory/test-generic-local/webapp-{{ build_number }}.war
       dest: /home/tomcat/sourcefile/webapp.war
       username: gmadhavivijaytn@gmail.com
       password: Password@1
@@ -31,10 +31,10 @@
       dest: /home/tomcat/backup/webapp.war
       remote_src: yes
 
-  - name: Delete remote war file
-    file:
-      path: /opt/tomcat/webapps/webapp.war
-      state: absent
+  # - name: Delete remote war file
+  #   file:
+  #     path: /opt/tomcat/webapps/webapp.war
+  #     state: absent
 
   - name: deploy file with owner and permissions
     copy:

@@ -5,14 +5,14 @@
       shell: sudo chmod 0777 /var/run/docker.sock
       
     - name: login to jfrog
-      shell: docker login -u gmadhavivijaytn@gmail.com -p Password@1 madhavig.jfrog.io    
+      shell: docker login -u gmadhavivijaytn@gmail.com -p Password@1 madhavi2023.jfrog.io    
     
     - name: pull an image
-      shell: docker pull madhavig.jfrog.io/docker-test/devops_practice:{{ BUILD_NUMBER }}
+      shell: docker pull madhavi2023.jfrog.io/docker-trail/image1:{{ BUILD_NUMBER }}
 
     - name: remove container
-      shell: docker rm -f devopsAppDeploy
+      shell: docker rm -f AppDeploy
         
     - name: create a application container
-      shell: docker run -id --name devopsAppDeploy -p 8111:8080 madhavig.jfrog.io/docker-test/devops_practice:{{ BUILD_NUMBER }}
+      shell: docker run -id --name AppDeploy -p 8111:8080 madhavi2023.jfrog.io/docker-trail/image1:{{ BUILD_NUMBER }}
  

@@ -1,3 +1,3 @@
-Simple Maven Project
+Simple Maven Project1
 
-Simple Maven Project
+Simple Maven Project2

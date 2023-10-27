@@ -8,11 +8,11 @@
       shell: docker login -u gmadhavivijaytn@gmail.com -p Password@1 madhavi2023.jfrog.io    
     
     - name: pull an image
-      shell: docker pull madhavi2023.jfrog.io/docker-trial/image1:{{ BUILD_NUMBER }}
+      shell: docker pull madhavi2023.jfrog.io/appd-docker/image:{{ BUILD_NUMBER }}
 
-    - name: remove container
-      shell: docker rm -f AppDeploy
+    # - name: remove container
+      # shell: docker rm -f AppDeploy
         
     - name: create a application container
-      shell: docker run -id --name AppDeploy -p 8111:8080 madhavi2023.jfrog.io/docker-trial/image1:{{ BUILD_NUMBER }}
+      shell: docker run -id --name AppDeploy -p 8111:8080 madhavi2023.jfrog.io/appd-docker/image:{{ BUILD_NUMBER }}
  
